@@ -5,5 +5,5 @@
   @apply text-4xl font-bold flex items-center;
 }
 .navbar {
-  @apply container mx-auto h-[70px] flex justify-between items-center;
+  @apply container mx-auto h-[70px] flex justify-between md:items-center flex-col md:flex-row;
 }
