@@ -4,7 +4,9 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <div className="container mx-auto">
+        <Component {...pageProps} />
+      </div>
     </Layout>
   );
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "../../styles/Header.module.css";
+import { useRouter } from "next/router";
 import {
   TiSocialFacebook,
   TiSocialYoutube,
@@ -10,10 +11,11 @@ import { useState } from "react";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
   return (
-    <header className="bg-gray-300 sticky top-0 z-50">
+    <header className="bg-gray-300 z-50 shrink-0">
       <nav className={styles.navbar}>
-        <div className="flex justify-between items-center px-4 h-[70px] md:h-auto">
+        <div className="flex justify-between items-center px-4 h-[70px] md:h-auto shrink-1">
           <div className={styles.logo}>
             Pro<span className="text-purple-500">Blogs</span>{" "}
           </div>
@@ -26,32 +28,50 @@ const Header = () => {
         </div>
         <ul
           onClick={() => setOpen(!open)}
-          className={`flex md:flex-row flex-col md:items-center md:justify-center gap-5 font-semibold uppercase absolute md:static top-[70px] md:top-auto bg-slate-500 md:bg-transparent w-[70%] md:w-auto h-[89.6vh] duration-700 md:h-auto ${
-            open ? "left-0" : "-left-[100%]"
-          }`}
+          className={styles.navul + ` ${open ? "left-0" : "-left-[100%]"}`}
         >
-          <lis className="hover:text-purple-500 duration-700 py-2 px-4 md:px-0 md:py-0 ">
+          <li
+            className={`${
+              router.pathname === "/" && "text-purple-500"
+            } hover:text-purple-500 duration-700 py-2 px-4 md:px-0 md:py-0 `}
+          >
             <Link href={"/"}>
               <a>Home</a>
             </Link>
-          </lis>
-          <li className="hover:text-purple-500 duration-700 py-2 px-4 md:px-0 md:py-0 ">
-            <Link href={"/"}>
+          </li>
+          <li
+            className={`${
+              router.pathname === "/about" && "text-purple-500"
+            } hover:text-purple-500 duration-700 py-2 px-4 md:px-0 md:py-0 `}
+          >
+            <Link href={"/about"}>
               <a>About</a>
             </Link>
           </li>
-          <li className="hover:text-purple-500 duration-700 py-2 px-4 md:px-0 md:py-0 ">
-            <Link href={"/"}>
+          <li
+            className={`${
+              router.pathname === "/blogs" && "text-purple-500"
+            } hover:text-purple-500 duration-700 py-2 px-4 md:px-0 md:py-0 `}
+          >
+            <Link href={"/blogs"}>
               <a>Blog</a>
             </Link>
           </li>
-          <li className="hover:text-purple-500 duration-700 py-2 px-4 md:px-0 md:py-0 ">
-            <Link href={"/"}>
+          <li
+            className={`${
+              router.pathname === "/contact" && "text-purple-500"
+            } hover:text-purple-500 duration-700 py-2 px-4 md:px-0 md:py-0 `}
+          >
+            <Link href={"/contact"}>
               <a>Contact</a>
             </Link>
           </li>
-          <li className="hover:text-purple-500 duration-700 py-2 px-4 md:px-0 md:py-0 ">
-            <Link href={"/"}>
+          <li
+            className={`${
+              router.pathname === "/faq" && "text-purple-500"
+            } hover:text-purple-500 duration-700 py-2 px-4 md:px-0 md:py-0 `}
+          >
+            <Link href={"/faq"}>
               <a>FAQ</a>
             </Link>
           </li>

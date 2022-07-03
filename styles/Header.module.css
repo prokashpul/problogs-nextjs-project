@@ -7,3 +7,6 @@
 .navbar {
   @apply container mx-auto h-[70px] flex justify-between md:items-center flex-col md:flex-row;
 }
+.navul {
+  @apply flex md:flex-row flex-col md:items-center md:justify-center gap-5 font-semibold uppercase absolute md:static top-[70px] md:top-auto bg-slate-200 md:bg-transparent w-[70%] md:w-auto h-[89.6vh] duration-700 md:h-auto;
+}
